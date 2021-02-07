@@ -6,5 +6,7 @@ Python 3.9.1
 Для работы с БД нужно подгрузить flask_sqlalchemy и flask_marshmallow
 
 pip install flask
+
 pip install flask_sqlalchemy
+
 pip install flask_marshmallow
