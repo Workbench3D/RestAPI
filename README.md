@@ -12,4 +12,6 @@ pip install flask_sqlalchemy
 
 pip install flask_marshmallow
 
+pip install marshmallow_sqlalchemy
+
 Реализация разных методов находиться в разных ветках
