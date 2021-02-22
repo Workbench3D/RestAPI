@@ -16,6 +16,7 @@ users = [
 ]
 
 
+# класс работающий с словарем
 class Storage:
     def get_users(self):
         return jsonify(users)
@@ -32,17 +33,17 @@ class Storage:
         }
         users.append(new_user)
 
-        return jsonify({'result': True})
+        return jsonify('Create new user')
 
     def put_user(self, user_id):
         update_user = list(filter(lambda x: x['id'] == user_id, users))
         update_user[0]['user_name'] = request.json.get(
             'user_name', update_user[0]['user_name'])
 
-        return jsonify({'user_name': update_user[0]})
+        return jsonify('Update user' + ' ' + update_user[0].get('user_name'))
 
     def delete_user(self, user_id):
         del_user = list(filter(lambda x: x['id'] == user_id, users))
         users.remove(del_user[0])
 
-        return jsonify({'result': True})
+        return jsonify('Delete user' + ' ' + del_user[0].get('user_name'))

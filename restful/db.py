@@ -53,7 +53,7 @@ class SQLite:
         cur.execute("INSERT INTO users VALUES (:id, :user_name);", new_user)
         conn.commit()
 
-        return jsonify({'result': True})
+        return jsonify('Create new user')
 
     def put_user(self, user_id):
         cur.execute("SELECT * FROM users;")
@@ -65,10 +65,10 @@ class SQLite:
         cur.execute("UPDATE users SET user_name=? WHERE id=?;", (user_name, user_id))
         conn.commit()
 
-        return jsonify({'result': True})
+        return jsonify('Update user' + ' ' + update_user[0].get('user_name'))
 
     def delete_user(self, user_id):
         cur.execute("DELETE FROM users WHERE id=?;", (user_id, ))
         conn.commit()
 
-        return jsonify({'result': True})
+        return jsonify('Delete user')
