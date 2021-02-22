@@ -1,6 +1,15 @@
 # игнорировать файлы в директориях
 venv/
 .idea/
+__pycache__/
+instance/
+.pytest_cache/
+htmlcov/
+dist/
+build/
+*.egg-info/
 
 # игнорировать файлы
-user.db
+users.db
+*.pyc
+.coverage

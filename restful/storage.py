@@ -21,7 +21,7 @@ class Storage:
         return jsonify(users)
 
     def get_user(self, user_id):
-        user = list(filter(lambda t: t['id'] == user_id, users))
+        user = list(filter(lambda x: x['id'] == user_id, users))
 
         return jsonify(user[0])
 
@@ -32,7 +32,7 @@ class Storage:
         }
         users.append(new_user)
 
-        return jsonify(users)
+        return jsonify({'result': True})
 
     def put_user(self, user_id):
         update_user = list(filter(lambda x: x['id'] == user_id, users))
